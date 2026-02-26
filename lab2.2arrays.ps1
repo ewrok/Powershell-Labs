@@ -87,3 +87,8 @@ $second = @(
 
 #Added together using
 $first+$second
+
+# STEP 14. Plus Equals for Combining Arrays
+$first += 'Two, Three'
+
+# STEP 15. Strongly Typed Arrays
