@@ -92,3 +92,43 @@ $first+$second
 $first += 'Two, Three'
 
 # STEP 15. Strongly Typed Arrays
+[int[]] $numbers = 1,2,3
+[string[]] $numbers = 1,2,3
+
+# STEP 16. ArrayList
+#To create an ArrayList, and then add items to it, run the following:
+myarray = [System.Collections.ArrayList]::new()
+ [void]$myArray.Add('Value')
+# Here, we can use the default .Net constructor to create a new ArrayList, and then using 
+# the -Add operator to add items to it. The [void] operator is there because sometimes 
+# these commands throw out strange outputs that can mess with the code.
+
+# Advanced Array Functions
+# Pre-Sized Arrays
+$data = [Object[]]::new(4) 
+
+# Multiplying Arrays
+# This will create a new array with each value repeated three times. You 
+# can also use this command as an alternative way to fill an array with zeros (or any other 
+# default value) by making an array with your chosen value, and then multiplying it as 
+# many times as you like
+$data =@('red', 'green', 'blue')
+$data * 3
+
+# Nested Arrays
+$data = @(@(1,2,3),@(4,5,6),@(7,8,9))
+ $data2 = @(
+        @(1,2,3)
+        @(4,5,6)
+        @(7,8,9)
+ )
+
+# The data structure you are making with this command is a classic matrix, and it can be 
+# worked with like those in other programming languages. For instance, to access a 
+# particular value from this array, you will need to specify two dimensions. 
+# For instance, to access the value “3”, we would use this: 
+PS>  $outside = 0 
+PS>  $inside = 2 
+PS>  $data[$outside][$inside]
+
+# Completed
